@@ -1,0 +1,508 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Georgia, serif;
+    background: #fff5f7;
+    color: #4a3037;
+}
+
+
+/* Opening Screen */
+
+#home {
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background: linear-gradient(
+        135deg,
+        #ffe1e9,
+        #fff7f8
+    );
+}
+
+
+.welcome {
+    padding: 30px;
+}
+
+
+.small-text {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+
+h1 {
+    font-size: 55px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+
+.subtitle {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+
+button {
+    border: none;
+
+    padding: 15px 30px;
+
+    border-radius: 30px;
+
+    background: #d96c8a;
+
+    color: white;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+button:hover {
+    transform: scale(1.05);
+    background: #c95776;
+}
+
+
+/* Main Website */
+
+#main-content {
+    display: none;
+}
+
+
+.section {
+    min-height: 70vh;
+
+    padding: 100px 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+}
+
+
+.section h2 {
+    font-size: 40px;
+
+    margin-bottom: 20px;
+}
+
+
+.section p {
+    max-width: 700px;
+
+    font-size: 19px;
+
+    line-height: 1.8;
+}
+
+
+/* Reasons */
+
+#reason-card {
+    margin-top: 40px;
+    max-width: 600px;
+    width: 90%;
+    padding: 50px 30px;
+    background: white;
+    border-radius: 25px;
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.08);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#reason-card:hover {
+    transform: translateY(-5px);
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.12);
+}
+
+
+#reason-number {
+    font-size: 15px;
+
+    color: #c95776;
+}
+
+
+#reason-text {
+    font-size: 26px;
+    line-height: 1.7;
+    margin: 35px 0;
+    color: #51363d;
+    animation: reasonAppear 0.6s ease;
+}
+
+@keyframes reasonAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* Final Section */
+
+.final {
+    min-height: 100vh;
+
+    background: #ffe1e9;
+}
+
+
+.final h2 {
+    font-size: 55px;
+}
+/* VIDEO */
+
+.video-container {
+    width: 90%;
+    max-width: 800px;
+    margin-top: 20px;
+}
+
+.video-container video {
+    width: 100%;
+    max-height: 600px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+/* LOVE LETTER */
+
+.letter-section {
+    background: linear-gradient(135deg, #fff5f7, #ffe3eb);
+    min-height: 100vh;
+    padding: 100px 20px;
+}
+
+.letter-section h2 {
+    color: #5a343e;
+    margin-bottom: 35px;
+}
+
+.letter-card {
+    width: 90%;
+    max-width: 800px;
+    background: #fffdf8;
+    padding: 55px 65px;
+    border-radius: 12px;
+    border: 1px solid #efd8de;
+
+    box-shadow:
+        0 15px 40px rgba(100, 50, 60, 0.12),
+        0 3px 10px rgba(100, 50, 60, 0.08);
+
+    position: relative;
+}
+
+.letter-text {
+    text-align: left;
+}
+
+.letter-text p {
+    max-width: none;
+    font-family: Georgia, serif;
+    font-size: 18px;
+    line-height: 2;
+    color: #51363d;
+    margin-bottom: 28px;
+}
+
+.letter-top,
+.letter-bottom {
+    text-align: center;
+    color: #d96c8a;
+    font-size: 30px;
+}
+
+.letter-top {
+    margin-bottom: 30px;
+}
+
+.letter-bottom {
+    margin-top: 30px;
+}
+
+
+/* PHONE */
+
+@media (max-width: 700px) {
+
+    .letter-section {
+        padding: 70px 10px;
+    }
+
+    .letter-card {
+        width: 95%;
+        padding: 35px 25px;
+    }
+
+    .letter-text p {
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+}
+/* FLOATING HEARTS */
+
+.floating-hearts {
+    position: fixed;
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 999;
+}
+
+.floating-hearts span {
+    position: absolute;
+    bottom: -50px;
+    font-size: 25px;
+    opacity: 0;
+    animation: floatHeart 8s linear infinite;
+}
+
+.floating-hearts span:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.floating-hearts span:nth-child(2) {
+    left: 25%;
+    animation-delay: 2s;
+}
+
+.floating-hearts span:nth-child(3) {
+    left: 40%;
+    animation-delay: 4s;
+}
+
+.floating-hearts span:nth-child(4) {
+    left: 55%;
+    animation-delay: 1s;
+}
+
+.floating-hearts span:nth-child(5) {
+    left: 70%;
+    animation-delay: 3s;
+}
+
+.floating-hearts span:nth-child(6) {
+    left: 82%;
+    animation-delay: 5s;
+}
+
+.floating-hearts span:nth-child(7) {
+    left: 90%;
+    animation-delay: 6s;
+}
+
+.floating-hearts span:nth-child(8) {
+    left: 50%;
+    animation-delay: 7s;
+}
+
+@keyframes floatHeart {
+
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.7;
+    }
+
+    50% {
+        opacity: 0.9;
+    }
+
+    100% {
+        transform: translateY(-100vh) rotate(25deg);
+        opacity: 0;
+    }
+}
+/* =================================
+   BIRTHDAY OPENING ANIMATION
+   ================================= */
+
+#home .small-text {
+    opacity: 0;
+    animation: appearDown 1s ease forwards;
+    animation-delay: 0.3s;
+}
+
+#home h1 {
+    opacity: 0;
+    animation: appearTitle 1.2s ease forwards;
+    animation-delay: 1.3s;
+}
+
+#home .subtitle {
+    opacity: 0;
+    animation: appearUp 1s ease forwards;
+    animation-delay: 2.7s;
+}
+
+#home button {
+    opacity: 0;
+    animation: appearUp 1s ease forwards;
+    animation-delay: 3.7s;
+}
+
+
+/* Small message appears from above */
+
+@keyframes appearDown {
+    from {
+        opacity: 0;
+        transform: translateY(-25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Birthday title gently grows */
+
+@keyframes appearTitle {
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* Subtitle and button rise upward */
+
+@keyframes appearUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Cute glow on the button */
+
+#home button {
+    box-shadow: 0 8px 20px rgba(217, 108, 138, 0.25);
+}
+
+#home button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 12px 25px rgba(217, 108, 138, 0.35);
+}
+/* =================================
+   FINAL BIRTHDAY SURPRISE
+   ================================= */
+
+.final {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ffe1e9, #fff5f7);
+    text-align: center;
+}
+
+.final-small {
+    font-size: 20px !important;
+    margin-bottom: 20px;
+    color: #c95776;
+}
+
+.final h2 {
+    font-size: 55px;
+    line-height: 1.3;
+    margin-bottom: 25px;
+}
+
+.final-message {
+    font-size: 19px !important;
+    margin-bottom: 35px;
+}
+
+#surprise-message {
+    display: none;
+    margin-top: 40px;
+    animation: surpriseAppear 1s ease forwards;
+}
+
+#surprise-message p {
+    font-size: 25px;
+    margin: 15px 0;
+}
+
+@keyframes surpriseAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 700px) {
+
+    .final h2 {
+        font-size: 40px;
+    }
+
+    .final-message {
+        font-size: 17px !important;
+    }
+
+    #surprise-message p {
+        font-size: 21px;
+    }
+}
+.reason-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
